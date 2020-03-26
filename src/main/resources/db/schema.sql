@@ -29,7 +29,7 @@
 
   <meta name="viewport" content="width=device-width">
   
-  <title>tutorials/data.sql at master · eugenp/tutorials</title>
+  <title>tutorials/schema.sql at master · eugenp/tutorials</title>
     <meta name="description" content="Just Announced - &quot;Learn Spring Security OAuth&quot;: . Contribute to eugenp/tutorials development by creating an account on GitHub.">
     <link rel="search" type="application/opensearchdescription+xml" href="/opensearch.xml" title="GitHub">
   <link rel="fluid-icon" href="https://github.com/fluidicon.png" title="GitHub">
@@ -39,10 +39,10 @@
     <meta property="og:image" content="https://avatars2.githubusercontent.com/u/1022859?s=400&amp;v=4" /><meta property="og:site_name" content="GitHub" /><meta property="og:type" content="object" /><meta property="og:title" content="eugenp/tutorials" /><meta property="og:url" content="https://github.com/eugenp/tutorials" /><meta property="og:description" content="Just Announced - &quot;Learn Spring Security OAuth&quot;: . Contribute to eugenp/tutorials development by creating an account on GitHub." />
 
   <link rel="assets" href="https://github.githubassets.com/">
-  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6NTE0MzU2ODE2OmU0MGRkMDg4MzI3MDRlMGY2ZTg2YTcwNjNmMWE2NjBiYzk4OTdiNjA4NWUzYTIyOTc0ZmMzZWEzOGE5NDE4NWE=--4a8d33dbfe625154edeaf07fce4af4cb05d98c16">
+  <link rel="web-socket" href="wss://live.github.com/_sockets/VjI6NTE0MzU2ODE2OmE0MzQwZTFjYzc2NzRiYTg2YzVhM2QzMzAwMTEzOTM1YjcxYzFkODU3ZjM2ZjhmYjg2YzRjZTFhMmEyYmVjNjU=--fdabfd3d59b063f824aab61055871fc1057316d3">
   <link rel="sudo-modal" href="/sessions/sudo_modal">
 
-  <meta name="request-id" content="C33D:91F2:309401:42441C:5E7C99F5" data-pjax-transient="true" /><meta name="html-safe-nonce" content="45e367f749113a22db8a817c06a36175a58121e4" data-pjax-transient="true" /><meta name="visitor-payload" content="eyJyZWZlcnJlciI6Imh0dHBzOi8vZ2l0aHViLmNvbS9ldWdlbnAvdHV0b3JpYWxzL3RyZWUvbWFzdGVyL3BlcnNpc3RlbmNlLW1vZHVsZXMvc3ByaW5nLWJvb3QtcGVyc2lzdGVuY2Uvc3JjL21haW4vcmVzb3VyY2VzIiwicmVxdWVzdF9pZCI6IkMzM0Q6OTFGMjozMDk0MDE6NDI0NDFDOjVFN0M5OUY1IiwidmlzaXRvcl9pZCI6IjExMzA1Mjg0MjcxNzgzNzc4MTgiLCJyZWdpb25fZWRnZSI6InNlYSIsInJlZ2lvbl9yZW5kZXIiOiJpYWQifQ==" data-pjax-transient="true" /><meta name="visitor-hmac" content="a44b5c2c736816d658b7df3a43d13600720e254ce61525e918e4ce2e800036b0" data-pjax-transient="true" />
+  <meta name="request-id" content="C33D:91F2:308C22:4242BE:5E7C99EC" data-pjax-transient="true" /><meta name="html-safe-nonce" content="45e367f749113a22db8a817c06a36175a58121e4" data-pjax-transient="true" /><meta name="visitor-payload" content="eyJyZWZlcnJlciI6Imh0dHBzOi8vZ2l0aHViLmNvbS9ldWdlbnAvdHV0b3JpYWxzL3RyZWUvbWFzdGVyL3BlcnNpc3RlbmNlLW1vZHVsZXMvc3ByaW5nLWJvb3QtcGVyc2lzdGVuY2Uvc3JjL21haW4vcmVzb3VyY2VzIiwicmVxdWVzdF9pZCI6IkMzM0Q6OTFGMjozMDhDMjI6NDI0MkJFOjVFN0M5OUVDIiwidmlzaXRvcl9pZCI6IjExMzA1Mjg0MjcxNzgzNzc4MTgiLCJyZWdpb25fZWRnZSI6InNlYSIsInJlZ2lvbl9yZW5kZXIiOiJpYWQifQ==" data-pjax-transient="true" /><meta name="visitor-hmac" content="a8eefb7738d29892746cffb5226f5d9f8d5594626acb081d60a5c0a0e71abc62" data-pjax-transient="true" />
 
 
 
@@ -76,7 +76,7 @@
 
       <meta name="expected-hostname" content="github.com">
 
-      <meta name="js-proxy-site-detection-payload" content="Njc2MmUxOGI5NmJlN2U2NDU1ODQ4M2YzZTY3NGVjNWNkOTJiZWI0NGI1MTlmMmMxYTIyNzE2MjUzY2I0MjJmNHx7InJlbW90ZV9hZGRyZXNzIjoiMTkyLjEyOS4yNDQuOCIsInJlcXVlc3RfaWQiOiJDMzNEOjkxRjI6MzA5NDAxOjQyNDQxQzo1RTdDOTlGNSIsInRpbWVzdGFtcCI6MTU4NTIyNDIxNSwiaG9zdCI6ImdpdGh1Yi5jb20ifQ==">
+      <meta name="js-proxy-site-detection-payload" content="ZTIxYjE3MTQ4YmMxOTc0OTU3NzNjYzMwYjc4ZDZhZjBiNGE1ZTg0YThiY2I5YmZkOGFhY2JmMmU0MGIwMjlmNXx7InJlbW90ZV9hZGRyZXNzIjoiMTkyLjEyOS4yNDQuOCIsInJlcXVlc3RfaWQiOiJDMzNEOjkxRjI6MzA4QzIyOjQyNDJCRTo1RTdDOTlFQyIsInRpbWVzdGFtcCI6MTU4NTIyNDE4MSwiaG9zdCI6ImdpdGh1Yi5jb20ifQ==">
 
     <meta name="enabled-features" content="MARKETPLACE_FEATURED_BLOG_POSTS,MARKETPLACE_INVOICED_BILLING,MARKETPLACE_SOCIAL_PROOF_CUSTOMERS,MARKETPLACE_TRENDING_SOCIAL_PROOF,MARKETPLACE_RECOMMENDATIONS,MARKETPLACE_PENDING_INSTALLATIONS,RELATED_ISSUES,GHE_CLOUD_TRIAL,PAGE_STALE_CHECK">
 
@@ -90,7 +90,7 @@
   <meta name="octolytics-dimension-user_id" content="1022859" /><meta name="octolytics-dimension-user_login" content="eugenp" /><meta name="octolytics-dimension-repository_id" content="9754983" /><meta name="octolytics-dimension-repository_nwo" content="eugenp/tutorials" /><meta name="octolytics-dimension-repository_public" content="true" /><meta name="octolytics-dimension-repository_is_fork" content="false" /><meta name="octolytics-dimension-repository_network_root_id" content="9754983" /><meta name="octolytics-dimension-repository_network_root_nwo" content="eugenp/tutorials" /><meta name="octolytics-dimension-repository_explore_github_marketplace_ci_cta_shown" content="false" />
 
 
-    <link rel="canonical" href="https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-boot-persistence/src/main/resources/data.sql" data-pjax-transient>
+    <link rel="canonical" href="https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-boot-persistence/src/main/resources/schema.sql" data-pjax-transient>
 
 
   <meta name="browser-stats-url" content="https://api.github.com/_private/browser/stats">
@@ -164,7 +164,7 @@
           spellcheck="false"
           autocomplete="off"
           >
-          <input type="hidden" value="lcU8aA5yYdMC7z8YlVziKY3f2xYLS6uuL81zKS70tpKNXr4lRxUc6CcNw94HdstqNvqV+/1h6eiaVdcLGP0I1g==" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" />
+          <input type="hidden" value="V1i2tf2nM0kh1Fd/lo3zwYkvFPtvI9cHQ7ZE8yYluoNPwzT4tMBOcgQ2q7kEp9qCMgpaFpkJlUH2LuDRECwExw==" data-csrf="true" class="js-data-jump-to-suggestions-path-csrf" />
           <input type="hidden" class="js-site-search-type-field" name="type" >
             <img src="https://github.githubassets.com/images/search-key-slash.svg" alt="" class="mr-2 header-search-key-slash">
 
@@ -315,7 +315,7 @@
       <img class="avatar" height="20" width="20" alt="@jiangjiachun" src="https://avatars0.githubusercontent.com/u/37534227?s=60&amp;u=93680936535076674fbcfb3ee17d20784ee5e1c9&amp;v=4" />
       jiangjiachun
 </a>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form action="/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="f5uZWm7RAlV3bx4u+TL/hVSkwx7iJSJfgHN4I1uJqb0VLiEcbLibtGoYlVtsIMXkFCZcos2cLxmq36GxNTpj0Q==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form action="/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="05aZQapLij7vSLa+ypI7HnBQ8Ea8U2+z3d4tp5aH+5O5IyEHqCIT3/I/PctfgAF/MNJv+pPqYvX3cvQ1+DQx/w==" />
       <button type="submit" class="Header-link mr-0 mr-lg-3 py-2 py-lg-0 border-top border-lg-top-0 border-white-fade-15 d-lg-none btn-link d-block width-full text-left" data-ga-click="Header, sign out, icon:logout" style="padding-left: 2px;">
         <svg class="octicon octicon-sign-out v-align-middle" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M12 9V7H8V5h4V3l4 3-4 3zm-2 3H6V3L2 1h8v3h1V1c0-.55-.45-1-1-1H1C.45 0 0 .45 0 1v11.38c0 .39.22.73.55.91L6 16.01V13h4c.55 0 1-.45 1-1V8h-1v4z"/></svg>
         Sign out
@@ -409,7 +409,7 @@
   " data-team-hovercards-enabled>
   <details class="js-user-status-details details-reset details-overlay details-overlay-dark">
     <summary class="btn-link btn-block link-gray no-underline js-toggle-user-status-edit toggle-user-status-edit "
-      role="menuitem" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:1022859,&quot;target&quot;:&quot;EDIT_USER_STATUS&quot;,&quot;user_id&quot;:37534227,&quot;originating_url&quot;:&quot;https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-boot-persistence/src/main/resources/data.sql&quot;}}" data-hydro-click-hmac="a8c2040a03f7aba6598b4752152424f315ac3a6b7d0122e394957526a125f685">
+      role="menuitem" data-hydro-click="{&quot;event_type&quot;:&quot;user_profile.click&quot;,&quot;payload&quot;:{&quot;profile_user_id&quot;:1022859,&quot;target&quot;:&quot;EDIT_USER_STATUS&quot;,&quot;user_id&quot;:37534227,&quot;originating_url&quot;:&quot;https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-boot-persistence/src/main/resources/schema.sql&quot;}}" data-hydro-click-hmac="c6beadfe81dcc1841e76fabaa631fd60dc2f013ea3ce5d383ac20d9f7735ae40">
       <div class="d-flex">
         <div class="f6 lh-condensed user-status-header
           d-inline-block v-align-middle
@@ -436,7 +436,7 @@
       </div>
     </summary>
     <details-dialog class="details-dialog rounded-1 anim-fade-in fast Box Box--overlay" role="dialog" tabindex="-1">
-      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="position-relative flex-auto js-user-status-form" action="/users/status?compact=1&amp;link_mentions=0&amp;truncate=1" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="f08KC/rzAhOk6SSZC9fpswcJ7IQMsm6+7dXdUNmvAX1lgjXooKensZyYeQ1XfRdEi6KSYWH4NNHNncA5InAi7A==" />
+      <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="position-relative flex-auto js-user-status-form" action="/users/status?compact=1&amp;link_mentions=0&amp;truncate=1" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="put" /><input type="hidden" name="authenticity_token" value="h2KN3UT2Rkdmhve2iituVJLms8nYCo51HWrMgAOz6T2dr7I+HqLj5V73qiLWgZCjHk3NLLVA1Bo9ItHp+GzKrA==" />
         <div class="Box-header bg-gray border-bottom p-3">
           <button class="Box-btn-octicon js-toggle-user-status-edit btn-octicon float-right" type="reset" aria-label="Close dialog" data-close-dialog>
             <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
@@ -554,17 +554,17 @@
       </li>
       <li class="dropdown-divider" role="none"></li>
         <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 30 minutes" value="2020-03-26T20:33:35+08:00">
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 30 minutes" value="2020-03-26T20:33:01+08:00">
             in 30 minutes
           </button>
         </li>
         <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 1 hour" value="2020-03-26T21:03:35+08:00">
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 1 hour" value="2020-03-26T21:03:01+08:00">
             in 1 hour
           </button>
         </li>
         <li>
-          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 4 hours" value="2020-03-27T00:03:35+08:00">
+          <button type="button" class="btn-link dropdown-item ws-normal js-user-status-expire-button" title="in 4 hours" value="2020-03-27T00:03:01+08:00">
             in 4 hours
           </button>
         </li>
@@ -621,10 +621,10 @@
     class="dropdown-item btn-link"
     role="menuitem"
     data-feature-preview-trigger-url="/users/jiangjiachun/feature_previews"
-    data-feature-preview-close-details="{&quot;event_type&quot;:&quot;feature_preview.clicks.close_modal&quot;,&quot;payload&quot;:{&quot;originating_url&quot;:&quot;https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-boot-persistence/src/main/resources/data.sql&quot;,&quot;user_id&quot;:37534227}}"
-    data-feature-preview-close-hmac="1e9a43b9ade35aec9a4e1e052b81b4ed99025d9e535d2471e922daade7259e67"
-    data-hydro-click="{&quot;event_type&quot;:&quot;feature_preview.clicks.open_modal&quot;,&quot;payload&quot;:{&quot;link_location&quot;:&quot;user_dropdown&quot;,&quot;originating_url&quot;:&quot;https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-boot-persistence/src/main/resources/data.sql&quot;,&quot;user_id&quot;:37534227}}"
-    data-hydro-click-hmac="691bc2fe9b749dd109dd343c6728a663e43b00416207768f9dbf8b34b405ef06"
+    data-feature-preview-close-details="{&quot;event_type&quot;:&quot;feature_preview.clicks.close_modal&quot;,&quot;payload&quot;:{&quot;originating_url&quot;:&quot;https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-boot-persistence/src/main/resources/schema.sql&quot;,&quot;user_id&quot;:37534227}}"
+    data-feature-preview-close-hmac="021735c6acc32e7e4d708a438962c3df46a64c5310cbe68f2ac01bc5a5fcad97"
+    data-hydro-click="{&quot;event_type&quot;:&quot;feature_preview.clicks.open_modal&quot;,&quot;payload&quot;:{&quot;link_location&quot;:&quot;user_dropdown&quot;,&quot;originating_url&quot;:&quot;https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-boot-persistence/src/main/resources/schema.sql&quot;,&quot;user_id&quot;:37534227}}"
+    data-hydro-click-hmac="41e6fbc10283e3e2e369aa867e615b9e97fc4c29eab331821d5d5f3bb06fc6a4"
   >
     Feature preview
   </button>
@@ -633,12 +633,12 @@
 
     <a role="menuitem" class="dropdown-item" href="https://help.github.com" data-ga-click="Header, go to help, text:help">Help</a>
     <a role="menuitem" class="dropdown-item" href="/settings/profile" data-ga-click="Header, go to settings, icon:settings">Settings</a>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="AhW5tUjJC0U5GWv0IL3jYLPjKUaiQ22c5fvVn0sFuYxooAHzSqCSpCRu4IG1r9kB82G2+o36YNrPVwwNJbZz4A==" />
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="logout-form" action="/logout" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="uMy9kYN1QIBfyADrEEP/xINs0+MDbFkpnZeXsQqzvVLSeQXXgRzZYUK/i56FUcWlw+5MXyzVVG+3O04jZAB3Pg==" />
       
       <button type="submit" class="dropdown-item dropdown-signout" data-ga-click="Header, sign out, icon:logout" role="menuitem">
         Sign out
       </button>
-      <input type="text" name="required_field_5bc3" hidden="hidden" class="form-control" /><input type="hidden" name="timestamp" value="1585224215082" class="form-control" /><input type="hidden" name="timestamp_secret" value="717a78aa52c98d29ff938388c448d27c6aaca173c86998738f7d841729b77e9a" class="form-control" />
+      <input type="text" name="required_field_a2ff" hidden="hidden" class="form-control" /><input type="hidden" name="timestamp" value="1585224181221" class="form-control" /><input type="hidden" name="timestamp_secret" value="0d230c94a045ca89111182b0afff71adc2545797342cee85373bdf3aa70c0f18" class="form-control" />
 </form>  </details-menu>
 </details>
 
@@ -680,10 +680,10 @@
       <p class="shelf-lead">
           Using the Hello World guide, you’ll start a branch, write comments, and open a pull request.
       </p>
-      <a class="btn btn-primary shelf-cta" target="_blank" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;READ_GUIDE&quot;,&quot;repository_id&quot;:9754983,&quot;originating_url&quot;:&quot;https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-boot-persistence/src/main/resources/data.sql&quot;,&quot;user_id&quot;:37534227}}" data-hydro-click-hmac="34437283040e5f865aeee8a9fba98b8385dc2eec1c5266df9fff360285b0bb01" href="https://guides.github.com/activities/hello-world/">Read the guide</a>
+      <a class="btn btn-primary shelf-cta" target="_blank" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;READ_GUIDE&quot;,&quot;repository_id&quot;:9754983,&quot;originating_url&quot;:&quot;https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-boot-persistence/src/main/resources/schema.sql&quot;,&quot;user_id&quot;:37534227}}" data-hydro-click-hmac="a2ecc6522c2baad6bba869f2819dda8289bac3c641c783fbea26b2fa77cc7b69" href="https://guides.github.com/activities/hello-world/">Read the guide</a>
     </div>
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="shelf-dismiss js-notice-dismiss" action="/dashboard/dismiss_bootcamp" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="delete" /><input type="hidden" name="authenticity_token" value="7Bdh7WExSQ6u4+CGPl8VCmCwkq8jCw0bt2HZBFTyfPWm+S90HA1ilsr0NILpJr9svOe91PDT6eUMzUOE9dmseg==" />
-      <button name="button" type="submit" class="mr-1 close-button tooltipped tooltipped-w" aria-label="Hide this notice forever" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;DISMISS_BANNER&quot;,&quot;repository_id&quot;:9754983,&quot;originating_url&quot;:&quot;https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-boot-persistence/src/main/resources/data.sql&quot;,&quot;user_id&quot;:37534227}}" data-hydro-click-hmac="691f7d79ff4e4d78abe0e8bd886f4f6b269db0010b5979865ca352977abbdbb5">
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="shelf-dismiss js-notice-dismiss" action="/dashboard/dismiss_bootcamp" accept-charset="UTF-8" method="post"><input type="hidden" name="_method" value="delete" /><input type="hidden" name="authenticity_token" value="V5nSSzsR1EXycJ5jdrj1sBV9DHP/agY2d1+MZTSxK3Mdd5zSRi3/3ZZnSmehwV/WySojCCyy4sjM8xbllZr7/A==" />
+      <button name="button" type="submit" class="mr-1 close-button tooltipped tooltipped-w" aria-label="Hide this notice forever" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;DISMISS_BANNER&quot;,&quot;repository_id&quot;:9754983,&quot;originating_url&quot;:&quot;https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-boot-persistence/src/main/resources/schema.sql&quot;,&quot;user_id&quot;:37534227}}" data-hydro-click-hmac="e9f94d03873bca6f8a3b970caf610aac94a52177ec6c3d7c8fb4aedc8417ee0c">
         <svg aria-label="Hide this notice forever" class="octicon octicon-x v-align-text-top" viewBox="0 0 12 16" version="1.1" width="12" height="16" role="img"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
 </button></form>  </div>
 </div>
@@ -724,10 +724,10 @@
 
   <li>
     
-    <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="clearfix js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="Ea/z76oWA+RyhvUCtU3WLC1kVcr0Tr0GPI8tTMI5Z6iLVNXLBK67fd7WeNcgi+9YKCxbQ23wzZy94fjVT+Zing==" />      <input type="hidden" name="repository_id" value="9754983">
+    <!-- '"` --><!-- </textarea></xmp> --></option></form><form data-remote="true" class="clearfix js-social-form js-social-container" action="/notifications/subscribe" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="hX0Gz7bd28+cvcLCvmayDOB2ZCjmzAf0zEtnnaNyfxYfhiDrGGVjVjDtTxcroIt45T5qoX9yd25NJbIELq16IA==" />      <input type="hidden" name="repository_id" value="9754983">
 
       <details class="details-reset details-overlay select-menu float-left">
-        <summary class="select-menu-button float-left btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:9754983,&quot;originating_url&quot;:&quot;https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-boot-persistence/src/main/resources/data.sql&quot;,&quot;user_id&quot;:37534227}}" data-hydro-click-hmac="08a41bbf67698df613a4e8bc3abb0a865e6fe16d7e5e1c0ba8d596bd55386f62" data-ga-click="Repository, click Watch settings, action:blob#show">          <span data-menu-button>
+        <summary class="select-menu-button float-left btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;WATCH_BUTTON&quot;,&quot;repository_id&quot;:9754983,&quot;originating_url&quot;:&quot;https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-boot-persistence/src/main/resources/schema.sql&quot;,&quot;user_id&quot;:37534227}}" data-hydro-click-hmac="3ed724523e0b12d63dfa499e7aa75c9485fb9a0c889ce60ef79d4d95fad3127b" data-ga-click="Repository, click Watch settings, action:blob#show">          <span data-menu-button>
               <svg class="octicon octicon-eye v-align-text-bottom" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8.06 2C3 2 0 8 0 8s3 6 8.06 6C13 14 16 8 16 8s-3-6-7.94-6zM8 12c-2.2 0-4-1.78-4-4 0-2.2 1.8-4 4-4 2.22 0 4 1.8 4 4 0 2.22-1.78 4-4 4zm2-4c0 1.11-.89 2-2 2-1.11 0-2-.89-2-2 0-1.11.89-2 2-2 1.11 0 2 .89 2 2z"/></svg>
               Watch
           </span>
@@ -798,9 +798,9 @@
 
   <li>
       <div class="js-toggler-container js-social-container starring-container on">
-    <form class="starred js-social-form" action="/eugenp/tutorials/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="Y1YCBwgbTK15yOEk9ztCL9R9EC+CcLcPc4U7OWuZbhI2VK1VUhfXsKq9DItW45a1ngo+GMCfBhrmB6tjcH0R2A==" />
+    <form class="starred js-social-form" action="/eugenp/tutorials/unstar" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="MskN22Gz2vi9IhMbFudP4GBMdh2Ms3m+p0UN6j6ySB1ny6KJO79B5W5X/rS3P5t6KjtYKs5cyKsyx52wJVY31w==" />
       <input type="hidden" name="context" value="repository"></input>
-      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Unstar eugenp/tutorials" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:9754983,&quot;originating_url&quot;:&quot;https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-boot-persistence/src/main/resources/data.sql&quot;,&quot;user_id&quot;:37534227}}" data-hydro-click-hmac="c4377d97425494f953a33351df5b586f08885d78cc5fcddc7b321261fe91fb91" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">        <svg height="16" class="octicon octicon-star v-align-text-bottom" vertical_align="text_bottom" viewBox="0 0 14 16" version="1.1" width="14" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
+      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Unstar eugenp/tutorials" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;UNSTAR_BUTTON&quot;,&quot;repository_id&quot;:9754983,&quot;originating_url&quot;:&quot;https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-boot-persistence/src/main/resources/schema.sql&quot;,&quot;user_id&quot;:37534227}}" data-hydro-click-hmac="b0f2798fb43d75c791407d2445e19be41d4bd531e74a7b246f1b6f624deb3a5b" data-ga-click="Repository, click unstar button, action:blob#show; text:Unstar">        <svg height="16" class="octicon octicon-star v-align-text-bottom" vertical_align="text_bottom" viewBox="0 0 14 16" version="1.1" width="14" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
 
         Unstar
 </button>        <a class="social-count js-social-count" href="/eugenp/tutorials/stargazers"
@@ -808,9 +808,9 @@
            20.1k
         </a>
 </form>
-    <form class="unstarred js-social-form" action="/eugenp/tutorials/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="gWmtWoLGBrx+ASR3h0vmn9A5Wr//R824ycM3gUtP3kr+9dW5QyG+kaB+iejiRmbMuHmQ02E+KAdnjiMgMT2NkQ==" />
+    <form class="unstarred js-social-form" action="/eugenp/tutorials/star" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="JYT5WdyUpcWOoTFjSpdiS6qqF2zjHKuRWeWI/YHY8W5aGIG6HXMd6FDenPwvmuIYwurdAH1lTi73qJxc+6qitQ==" />
       <input type="hidden" name="context" value="repository"></input>
-      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Star eugenp/tutorials" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:9754983,&quot;originating_url&quot;:&quot;https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-boot-persistence/src/main/resources/data.sql&quot;,&quot;user_id&quot;:37534227}}" data-hydro-click-hmac="ae503d5fc446e90924cb61a2712ce576195c27a94b22ae02929f02031291eb9d" data-ga-click="Repository, click star button, action:blob#show; text:Star">        <svg height="16" class="octicon octicon-star v-align-text-bottom" vertical_align="text_bottom" viewBox="0 0 14 16" version="1.1" width="14" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
+      <button type="submit" class="btn btn-sm btn-with-count js-toggler-target" aria-label="Unstar this repository" title="Star eugenp/tutorials" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;STAR_BUTTON&quot;,&quot;repository_id&quot;:9754983,&quot;originating_url&quot;:&quot;https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-boot-persistence/src/main/resources/schema.sql&quot;,&quot;user_id&quot;:37534227}}" data-hydro-click-hmac="8acf0455e0978025d444ba906619136e02a32b28a31ccfc61a011db9b5cdb9b8" data-ga-click="Repository, click star button, action:blob#show; text:Star">        <svg height="16" class="octicon octicon-star v-align-text-bottom" vertical_align="text_bottom" viewBox="0 0 14 16" version="1.1" width="14" aria-hidden="true"><path fill-rule="evenodd" d="M14 6l-4.9-.64L7 1 4.9 5.36 0 6l3.6 3.26L2.67 14 7 11.67 11.33 14l-.93-4.74L14 6z"/></svg>
 
         Star
 </button>        <a class="social-count js-social-count" href="/eugenp/tutorials/stargazers"
@@ -822,8 +822,8 @@
   </li>
 
   <li>
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="btn-with-count" action="/eugenp/tutorials/fork" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="N4Gi3ENGiNB+H2wVjlIm0DQO+4fLTMK2g69FVaUC1zf2nCUU+nevnFrz3q349kauGV20WU4W2k7WM+zUeP2DGg==" />
-            <button class="btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FORK_BUTTON&quot;,&quot;repository_id&quot;:9754983,&quot;originating_url&quot;:&quot;https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-boot-persistence/src/main/resources/data.sql&quot;,&quot;user_id&quot;:37534227}}" data-hydro-click-hmac="f8da2fb34aeaa4e59a9c3a07e262598bc7c6cabf0f3094ec0d8361cdcdb12870" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork" type="submit" title="Fork your own copy of eugenp/tutorials to your account" aria-label="Fork your own copy of eugenp/tutorials to your account">              <svg class="octicon octicon-repo-forked v-align-text-bottom" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 00-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 002 1a1.993 1.993 0 00-1 3.72V6.5l3 3v1.78A1.993 1.993 0 005 15a1.993 1.993 0 001-3.72V9.5l3-3V4.72A1.993 1.993 0 008 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="btn-with-count" action="/eugenp/tutorials/fork" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="QVPHgA9lZEPajCm9NMx+ZKzC42gkkEQ1l8dbapnBswGATkBItlRDD/5gmwVCaB4agZGstqHKXM3CW/LrRD7nLA==" />
+            <button class="btn btn-sm btn-with-count" data-hydro-click="{&quot;event_type&quot;:&quot;repository.click&quot;,&quot;payload&quot;:{&quot;target&quot;:&quot;FORK_BUTTON&quot;,&quot;repository_id&quot;:9754983,&quot;originating_url&quot;:&quot;https://github.com/eugenp/tutorials/blob/master/persistence-modules/spring-boot-persistence/src/main/resources/schema.sql&quot;,&quot;user_id&quot;:37534227}}" data-hydro-click-hmac="e67e4d1f998d309d27e90712dce6bc98ecc0062712a5b9b0938e395cf82ef7c3" data-ga-click="Repository, show fork modal, action:blob#show; text:Fork" type="submit" title="Fork your own copy of eugenp/tutorials to your account" aria-label="Fork your own copy of eugenp/tutorials to your account">              <svg class="octicon octicon-repo-forked v-align-text-bottom" viewBox="0 0 10 16" version="1.1" width="10" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M8 1a1.993 1.993 0 00-1 3.72V6L5 8 3 6V4.72A1.993 1.993 0 002 1a1.993 1.993 0 00-1 3.72V6.5l3 3v1.78A1.993 1.993 0 005 15a1.993 1.993 0 001-3.72V9.5l3-3V4.72A1.993 1.993 0 008 1zM2 4.2C1.34 4.2.8 3.65.8 3c0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3 10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2zm3-10c-.66 0-1.2-.55-1.2-1.2 0-.65.55-1.2 1.2-1.2.65 0 1.2.55 1.2 1.2 0 .65-.55 1.2-1.2 1.2z"/></svg>
               Fork
 </button></form>
     <a href="/eugenp/tutorials/network/members" class="social-count"
@@ -970,9 +970,9 @@
   
 
 
-    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/eugenp/tutorials/blob/67cefb4342347474abfcf3ec0387007e95661ab7/persistence-modules/spring-boot-persistence/src/main/resources/data.sql">Permalink</a>
+    <a class="d-none js-permalink-shortcut" data-hotkey="y" href="/eugenp/tutorials/blob/67cefb4342347474abfcf3ec0387007e95661ab7/persistence-modules/spring-boot-persistence/src/main/resources/schema.sql">Permalink</a>
 
-    <!-- blob contrib key: blob_contributors:v22:fbbcab5c79f6f355c9e48f8adee1568f -->
+    <!-- blob contrib key: blob_contributors:v22:2e8762e4fd672224acf935c0cbaa4c39 -->
     
 
     <div class="d-flex flex-items-start flex-shrink-0 flex-column flex-md-row pb-3">
@@ -987,7 +987,7 @@
     <span class="dropdown-caret"></span>
   </summary>
 
-  <details-menu class="SelectMenu SelectMenu--hasFilter" src="/eugenp/tutorials/refs/master/persistence-modules/spring-boot-persistence/src/main/resources/data.sql?source_action=show&amp;source_controller=blob" preload>
+  <details-menu class="SelectMenu SelectMenu--hasFilter" src="/eugenp/tutorials/refs/master/persistence-modules/spring-boot-persistence/src/main/resources/schema.sql?source_action=show&amp;source_controller=blob" preload>
     <div class="SelectMenu-modal">
       <include-fragment class="SelectMenu-loading" aria-label="Menu is loading">
         <svg class="octicon octicon-octoface anim-pulse" height="32" viewBox="0 0 16 16" version="1.1" width="32" aria-hidden="true"><path fill-rule="evenodd" d="M14.7 5.34c.13-.32.55-1.59-.13-3.31 0 0-1.05-.33-3.44 1.3-1-.28-2.07-.32-3.13-.32s-2.13.04-3.13.32c-2.39-1.64-3.44-1.3-3.44-1.3-.68 1.72-.26 2.99-.13 3.31C.49 6.21 0 7.33 0 8.69 0 13.84 3.33 15 7.98 15S16 13.84 16 8.69c0-1.36-.49-2.48-1.3-3.35zM8 14.02c-3.3 0-5.98-.15-5.98-3.35 0-.76.38-1.48 1.02-2.07 1.07-.98 2.9-.46 4.96-.46 2.07 0 3.88-.52 4.96.46.65.59 1.02 1.3 1.02 2.07 0 3.19-2.68 3.35-5.98 3.35zM5.49 9.01c-.66 0-1.2.8-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.54-1.78-1.2-1.78zm5.02 0c-.66 0-1.2.79-1.2 1.78s.54 1.79 1.2 1.79c.66 0 1.2-.8 1.2-1.79s-.53-1.78-1.2-1.78z"/></svg>
@@ -1003,13 +1003,13 @@
                 data-hotkey="t">
             Find file
           </a>
-          <clipboard-copy value="persistence-modules/spring-boot-persistence/src/main/resources/data.sql" class="btn btn-sm BtnGroup-item">
+          <clipboard-copy value="persistence-modules/spring-boot-persistence/src/main/resources/schema.sql" class="btn btn-sm BtnGroup-item">
             Copy path
           </clipboard-copy>
         </div>
       </span>
       <h2 id="blob-path" class="breadcrumb flex-auto min-width-0 text-normal flex-md-self-center ml-md-2 mr-md-3 my-2 my-md-0">
-          <span class="js-repo-root text-bold"><span class="js-path-segment"><a data-pjax="true" href="/eugenp/tutorials"><span>tutorials</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/eugenp/tutorials/tree/master/persistence-modules"><span>persistence-modules</span></a></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/eugenp/tutorials/tree/master/persistence-modules/spring-boot-persistence"><span>spring-boot-persistence</span></a></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/eugenp/tutorials/tree/master/persistence-modules/spring-boot-persistence/src"><span>src</span></a></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/eugenp/tutorials/tree/master/persistence-modules/spring-boot-persistence/src/main"><span>main</span></a></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/eugenp/tutorials/tree/master/persistence-modules/spring-boot-persistence/src/main/resources"><span>resources</span></a></span><span class="separator">/</span><strong class="final-path">data.sql</strong>
+          <span class="js-repo-root text-bold"><span class="js-path-segment"><a data-pjax="true" href="/eugenp/tutorials"><span>tutorials</span></a></span></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/eugenp/tutorials/tree/master/persistence-modules"><span>persistence-modules</span></a></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/eugenp/tutorials/tree/master/persistence-modules/spring-boot-persistence"><span>spring-boot-persistence</span></a></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/eugenp/tutorials/tree/master/persistence-modules/spring-boot-persistence/src"><span>src</span></a></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/eugenp/tutorials/tree/master/persistence-modules/spring-boot-persistence/src/main"><span>main</span></a></span><span class="separator">/</span><span class="js-path-segment"><a data-pjax="true" href="/eugenp/tutorials/tree/master/persistence-modules/spring-boot-persistence/src/main/resources"><span>resources</span></a></span><span class="separator">/</span><strong class="final-path">schema.sql</strong>
       </h2>
 
       <div class="BtnGroup flex-shrink-0 d-none d-md-inline-block">
@@ -1019,7 +1019,7 @@
               data-hotkey="t">
           Find file
         </a>
-        <clipboard-copy value="persistence-modules/spring-boot-persistence/src/main/resources/data.sql" class="btn btn-sm BtnGroup-item">
+        <clipboard-copy value="persistence-modules/spring-boot-persistence/src/main/resources/schema.sql" class="btn btn-sm BtnGroup-item">
           Copy path
         </clipboard-copy>
       </div>
@@ -1051,7 +1051,7 @@
         <details-dialog
           class="Box Box--overlay d-flex flex-column anim-fade-in fast"
           aria-label="Users who have contributed to this file"
-          src="/eugenp/tutorials/contributors-list/master/persistence-modules/spring-boot-persistence/src/main/resources/data.sql" preload>
+          src="/eugenp/tutorials/contributors-list/master/persistence-modules/spring-boot-persistence/src/main/resources/schema.sql" preload>
           <div class="Box-header">
             <button class="Box-btn-octicon btn-octicon float-right" type="button" aria-label="Close dialog" data-close-dialog>
               <svg class="octicon octicon-x" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M7.48 8l3.75 3.75-1.48 1.48L6 9.48l-3.75 3.75-1.48-1.48L4.52 8 .77 4.25l1.48-1.48L6 6.52l3.75-3.75 1.48 1.48L7.48 8z"/></svg>
@@ -1077,36 +1077,36 @@
 <div class="Box-header py-2 d-flex flex-column flex-shrink-0 flex-md-row flex-md-items-center">
   <div class="text-mono f6 flex-auto pr-3 flex-order-2 flex-md-order-1 mt-2 mt-md-0">
 
-      10 lines (9 sloc)
+      15 lines (13 sloc)
       <span class="file-info-divider"></span>
-    385 Bytes
+    301 Bytes
   </div>
 
   <div class="d-flex py-1 py-md-0 flex-auto flex-order-1 flex-md-order-2 flex-sm-grow-0 flex-justify-between">
 
     <div class="BtnGroup">
-      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/eugenp/tutorials/raw/master/persistence-modules/spring-boot-persistence/src/main/resources/data.sql">Raw</a>
-        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/eugenp/tutorials/blame/master/persistence-modules/spring-boot-persistence/src/main/resources/data.sql">Blame</a>
-      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="/eugenp/tutorials/commits/master/persistence-modules/spring-boot-persistence/src/main/resources/data.sql">History</a>
+      <a id="raw-url" class="btn btn-sm BtnGroup-item" href="/eugenp/tutorials/raw/master/persistence-modules/spring-boot-persistence/src/main/resources/schema.sql">Raw</a>
+        <a class="btn btn-sm js-update-url-with-hash BtnGroup-item" data-hotkey="b" href="/eugenp/tutorials/blame/master/persistence-modules/spring-boot-persistence/src/main/resources/schema.sql">Blame</a>
+      <a rel="nofollow" class="btn btn-sm BtnGroup-item" href="/eugenp/tutorials/commits/master/persistence-modules/spring-boot-persistence/src/main/resources/schema.sql">History</a>
     </div>
 
 
     <div>
           <a class="btn-octicon tooltipped tooltipped-nw js-remove-unless-platform"
              data-platforms="windows,mac"
-             href="x-github-client://openRepo/https://github.com/eugenp/tutorials?branch=master&amp;filepath=persistence-modules%2Fspring-boot-persistence%2Fsrc%2Fmain%2Fresources%2Fdata.sql"
+             href="x-github-client://openRepo/https://github.com/eugenp/tutorials?branch=master&amp;filepath=persistence-modules%2Fspring-boot-persistence%2Fsrc%2Fmain%2Fresources%2Fschema.sql"
              aria-label="Open this file in GitHub Desktop"
              data-ga-click="Repository, open with desktop">
               <svg class="octicon octicon-device-desktop" viewBox="0 0 16 16" version="1.1" width="16" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M15 2H1c-.55 0-1 .45-1 1v9c0 .55.45 1 1 1h5.34c-.25.61-.86 1.39-2.34 2h8c-1.48-.61-2.09-1.39-2.34-2H15c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm0 9H1V3h14v8z"/></svg>
           </a>
 
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/eugenp/tutorials/edit/master/persistence-modules/spring-boot-persistence/src/main/resources/data.sql" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="EGXlUbYZq2gS6nK4+uyjwpvWHgz4i9OBrNyKA/wIHkaQ6mwtRGSqF4A14nB5XUCX7bt6u4nXuWVQP+0K/xCU7Q==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form js-update-url-with-hash" action="/eugenp/tutorials/edit/master/persistence-modules/spring-boot-persistence/src/main/resources/schema.sql" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="4oyd2jSnXBV/TSdcRqgL5d1Rg/3elZVsA2T+TBnc3pRYtBtoVVWYdBdAFl24hRCAM0uLMVbM27SGuQ7FYrthfw==" />
             <button class="btn-octicon tooltipped tooltipped-nw" type="submit"
               aria-label="Fork this project and edit the file" data-hotkey="e" data-disable-with>
               <svg class="octicon octicon-pencil" viewBox="0 0 14 16" version="1.1" width="14" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M0 12v3h3l8-8-3-3-8 8zm3 2H1v-2h1v1h1v1zm10.3-9.3L12 6 9 3l1.3-1.3a.996.996 0 011.41 0l1.59 1.59c.39.39.39 1.02 0 1.41z"/></svg>
             </button>
 </form>
-          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/eugenp/tutorials/delete/master/persistence-modules/spring-boot-persistence/src/main/resources/data.sql" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="kC0GiuUmwM38++a8GpQzwo1cYIkqCTy05IY9KMVjUm4AUpSp/RpgZ4UcTzcAnSKcMvW5iZ4rRthJb2skvH7LRw==" />
+          <!-- '"` --><!-- </textarea></xmp> --></option></form><form class="inline-form" action="/eugenp/tutorials/delete/master/persistence-modules/spring-boot-persistence/src/main/resources/schema.sql" accept-charset="UTF-8" method="post"><input type="hidden" name="authenticity_token" value="yg6/w619+j9qPN+q90lXddrj+i4j2nwIUkEP5INHcTNBw2Vpd/dL1KLZhoDClM54UP5mrqsI6Nq9pzOpV9N7+Q==" />
             <button class="btn-octicon btn-octicon-danger tooltipped tooltipped-nw" type="submit"
               aria-label="Fork this project and delete the file" data-disable-with>
               <svg class="octicon octicon-trashcan" viewBox="0 0 12 16" version="1.1" width="12" height="16" aria-hidden="true"><path fill-rule="evenodd" d="M11 2H9c0-.55-.45-1-1-1H5c-.55 0-1 .45-1 1H2c-.55 0-1 .45-1 1v1c0 .55.45 1 1 1v9c0 .55.45 1 1 1h7c.55 0 1-.45 1-1V5c.55 0 1-.45 1-1V3c0-.55-.45-1-1-1zm-1 12H3V5h1v8h1V5h1v8h1V5h1v8h1V5h1v9zm1-10H2V3h9v1z"/></svg>
@@ -1119,49 +1119,70 @@
 
       
 
-  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-sql ">
+  <div itemprop="text" class="Box-body p-0 blob-wrapper data type-tsql ">
       
 <table class="highlight tab-size js-file-line-container" data-tab-size="8" data-paste-markdown-skip>
       <tr>
         <td id="L1" class="blob-num js-line-number" data-line-number="1"></td>
-        <td id="LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">insert into</span> users <span class="pl-k">values</span> (<span class="pl-c1">1</span>, <span class="pl-s"><span class="pl-pds">&#39;</span>Alex<span class="pl-pds">&#39;</span></span>, <span class="pl-c1">1</span>);</td>
+        <td id="LC1" class="blob-code blob-code-inner js-file-line"><span class="pl-k">drop</span> <span class="pl-k">table</span> <span class="pl-k">if</span> <span class="pl-k">exists</span> USERS;</td>
       </tr>
       <tr>
         <td id="L2" class="blob-num js-line-number" data-line-number="2"></td>
-        <td id="LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-k">insert into</span> users <span class="pl-k">values</span> (<span class="pl-c1">2</span>, <span class="pl-s"><span class="pl-pds">&#39;</span>Bob<span class="pl-pds">&#39;</span></span>, <span class="pl-c1">1</span>);</td>
+        <td id="LC2" class="blob-code blob-code-inner js-file-line"><span class="pl-k">drop</span> <span class="pl-k">table</span> <span class="pl-k">if</span> <span class="pl-k">exists</span> country;</td>
       </tr>
       <tr>
         <td id="L3" class="blob-num js-line-number" data-line-number="3"></td>
-        <td id="LC3" class="blob-code blob-code-inner js-file-line"><span class="pl-k">insert into</span> users <span class="pl-k">values</span> (<span class="pl-c1">3</span>, <span class="pl-s"><span class="pl-pds">&#39;</span>John<span class="pl-pds">&#39;</span></span>, <span class="pl-c1">0</span>);</td>
-      </tr>
-      <tr>
-        <td id="L4" class="blob-num js-line-number" data-line-number="4"></td>
-        <td id="LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-k">insert into</span> users <span class="pl-k">values</span> (<span class="pl-c1">4</span>, <span class="pl-s"><span class="pl-pds">&#39;</span>Harry<span class="pl-pds">&#39;</span></span>, <span class="pl-c1">0</span>);</td>
-      </tr>
-      <tr>
-        <td id="L5" class="blob-num js-line-number" data-line-number="5"></td>
-        <td id="LC5" class="blob-code blob-code-inner js-file-line"><span class="pl-k">insert into</span> users <span class="pl-k">values</span> (<span class="pl-c1">5</span>, <span class="pl-s"><span class="pl-pds">&#39;</span>Smith<span class="pl-pds">&#39;</span></span>, <span class="pl-c1">1</span>);</td>
-      </tr>
-      <tr>
-        <td id="L6" class="blob-num js-line-number" data-line-number="6"></td>
-        <td id="LC6" class="blob-code blob-code-inner js-file-line">
+        <td id="LC3" class="blob-code blob-code-inner js-file-line">
 </td>
       </tr>
       <tr>
+        <td id="L4" class="blob-num js-line-number" data-line-number="4"></td>
+        <td id="LC4" class="blob-code blob-code-inner js-file-line"><span class="pl-k">create</span> <span class="pl-k">table</span> USERS(</td>
+      </tr>
+      <tr>
+        <td id="L5" class="blob-num js-line-number" data-line-number="5"></td>
+        <td id="LC5" class="blob-code blob-code-inner js-file-line">  ID <span class="pl-k">int</span> <span class="pl-k">not</span> <span class="pl-k">null</span> AUTO_INCREMENT,</td>
+      </tr>
+      <tr>
+        <td id="L6" class="blob-num js-line-number" data-line-number="6"></td>
+        <td id="LC6" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">NAME</span> <span class="pl-k">varchar</span>(<span class="pl-c1">100</span>) <span class="pl-k">not</span> <span class="pl-k">null</span>,</td>
+      </tr>
+      <tr>
         <td id="L7" class="blob-num js-line-number" data-line-number="7"></td>
-        <td id="LC7" class="blob-code blob-code-inner js-file-line"><span class="pl-k">INSERT INTO</span> country (name) <span class="pl-k">VALUES</span> (<span class="pl-s"><span class="pl-pds">&#39;</span>India<span class="pl-pds">&#39;</span></span>);</td>
+        <td id="LC7" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">STATUS</span> <span class="pl-k">int</span>,</td>
       </tr>
       <tr>
         <td id="L8" class="blob-num js-line-number" data-line-number="8"></td>
-        <td id="LC8" class="blob-code blob-code-inner js-file-line"><span class="pl-k">INSERT INTO</span> country (name) <span class="pl-k">VALUES</span> (<span class="pl-s"><span class="pl-pds">&#39;</span>Brazil<span class="pl-pds">&#39;</span></span>);</td>
+        <td id="LC8" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">PRIMARY</span> <span class="pl-k">KEY</span> ( ID )</td>
       </tr>
       <tr>
         <td id="L9" class="blob-num js-line-number" data-line-number="9"></td>
-        <td id="LC9" class="blob-code blob-code-inner js-file-line"><span class="pl-k">INSERT INTO</span> country (name) <span class="pl-k">VALUES</span> (<span class="pl-s"><span class="pl-pds">&#39;</span>USA<span class="pl-pds">&#39;</span></span>);</td>
+        <td id="LC9" class="blob-code blob-code-inner js-file-line">);</td>
       </tr>
       <tr>
         <td id="L10" class="blob-num js-line-number" data-line-number="10"></td>
-        <td id="LC10" class="blob-code blob-code-inner js-file-line"><span class="pl-k">INSERT INTO</span> country (name) <span class="pl-k">VALUES</span> (<span class="pl-s"><span class="pl-pds">&#39;</span>Italy<span class="pl-pds">&#39;</span></span>);</td>
+        <td id="LC10" class="blob-code blob-code-inner js-file-line">
+</td>
+      </tr>
+      <tr>
+        <td id="L11" class="blob-num js-line-number" data-line-number="11"></td>
+        <td id="LC11" class="blob-code blob-code-inner js-file-line"><span class="pl-k">CREATE</span> <span class="pl-k">TABLE</span> country (</td>
+      </tr>
+      <tr>
+        <td id="L12" class="blob-num js-line-number" data-line-number="12"></td>
+        <td id="LC12" class="blob-code blob-code-inner js-file-line">  id   <span class="pl-k">INTEGER</span>      <span class="pl-k">NOT</span> <span class="pl-k">NULL</span> AUTO_INCREMENT,</td>
+      </tr>
+      <tr>
+        <td id="L13" class="blob-num js-line-number" data-line-number="13"></td>
+        <td id="LC13" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">name</span> <span class="pl-k">VARCHAR</span>(<span class="pl-c1">128</span>) <span class="pl-k">NOT</span> <span class="pl-k">NULL</span>,</td>
+      </tr>
+      <tr>
+        <td id="L14" class="blob-num js-line-number" data-line-number="14"></td>
+        <td id="LC14" class="blob-code blob-code-inner js-file-line">  <span class="pl-k">PRIMARY</span> <span class="pl-k">KEY</span> (id)</td>
+      </tr>
+      <tr>
+        <td id="L15" class="blob-num js-line-number" data-line-number="15"></td>
+        <td id="LC15" class="blob-code blob-code-inner js-file-line">);</td>
       </tr>
 </table>
 
@@ -1181,7 +1202,7 @@
             Copy permalink
           </clipboard-copy>
         </li>
-        <li><a class="dropdown-item js-update-url-with-hash" id="js-view-git-blame" role="menuitem" href="/eugenp/tutorials/blame/67cefb4342347474abfcf3ec0387007e95661ab7/persistence-modules/spring-boot-persistence/src/main/resources/data.sql">View git blame</a></li>
+        <li><a class="dropdown-item js-update-url-with-hash" id="js-view-git-blame" role="menuitem" href="/eugenp/tutorials/blame/67cefb4342347474abfcf3ec0387007e95661ab7/persistence-modules/spring-boot-persistence/src/main/resources/schema.sql">View git blame</a></li>
           <li><a class="dropdown-item" id="js-new-issue" role="menuitem" href="/eugenp/tutorials/issues/new">Reference in new issue</a></li>
       </ul>
     </details-menu>
