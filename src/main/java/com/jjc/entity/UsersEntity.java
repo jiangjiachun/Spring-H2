@@ -3,15 +3,21 @@ package com.jjc.entity;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
+import javax.validation.constraints.Max;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.Range;
 
 @Entity
 @Table(name = "USERS")
 public class UsersEntity {
 
 	@Id
-	@GeneratedValue
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Long id;
 
 	@Column(name = "name")
@@ -20,6 +26,8 @@ public class UsersEntity {
 	@Column(name = "email", nullable = false, length = 250)
 	private String email;
 	
+	@NotNull
+	@Range(max = 150, min = 1)
 	@Column
 	private Integer age;
 

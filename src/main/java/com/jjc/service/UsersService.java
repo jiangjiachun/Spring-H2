@@ -38,7 +38,8 @@ public class UsersService {
 	}
 
 	public UsersEntity createOrUpdateEmployee(UsersEntity entity) throws RecordNotFoundException {
-		Optional<UsersEntity> employee = repository.findById(entity.getId());
+		return repository.save(entity);
+		/*Optional<UsersEntity> employee = repository.findById(entity.getId());
 
 		if (employee.isPresent()) {
 			UsersEntity newEntity = employee.get();
@@ -51,7 +52,7 @@ public class UsersService {
 			entity = repository.save(entity);
 
 			return entity;
-		}
+		}*/
 	}
 
 	public void deleteEmployeeById(Long id) throws RecordNotFoundException {
