@@ -1,4 +1,4 @@
-package com.jjc.h2;
+package com.jjc;
 
 import java.sql.SQLException;
 
@@ -6,7 +6,9 @@ import org.h2.tools.Server;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.context.annotation.Bean;
+import org.springframework.transaction.annotation.EnableTransactionManagement;
 
+@EnableTransactionManagement
 @SpringBootApplication
 public class SpringH2Application {
 
@@ -18,4 +20,5 @@ public class SpringH2Application {
 	public void inMemoryH2DatabaseServer() throws SQLException {
 		Server.createTcpServer("-tcp", "-tcpAllowOthers", "-tcpPort", "9092");
 	}
+	
 }
