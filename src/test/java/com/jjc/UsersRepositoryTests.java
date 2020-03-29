@@ -28,14 +28,14 @@ public class UsersRepositoryTests {
 	@Resource
 	private UsersRepository usersRepository;
 	
-	@Test
+	//@Test
 	public void countBySimpleExample() {
 		Example<UsersEntity> example = Example.of(new UsersEntity(null, "张三", "", null));
 		
 		assertThat(usersRepository.count(example)).isEqualTo(1L);
 	}
 	
-	@Test
+	//@Test
 	public void ignoreProperties() {
 		Optional<UsersEntity> users = usersRepository.findById(1L);
 		Example<UsersEntity> example = Example.of(new UsersEntity(null, null, null, 32), 
@@ -46,16 +46,16 @@ public class UsersRepositoryTests {
 	
 	@Test
 	public void likeMatching() {
-		Optional<UsersEntity> users = usersRepository.findById(1L);
+		UsersEntity user = usersRepository.findByName("张三");
 		Example<UsersEntity> example = Example.of(new UsersEntity(null, "张三", "com", null), 
 				ExampleMatcher.matching().
 //				withNullHandler(NullHandler.INCLUDE).
 				withStringMatcher(StringMatcher.CONTAINING));
 
-		assertThat(usersRepository.findAll(example)).contains(users.get());
+		assertThat(usersRepository.findAll(example)).contains(user);
 	}
 
-	@Test
+	//@Test
 	public void usingLambdas() {
 		Example<UsersEntity> example = Example.of(new UsersEntity(null, "张", "Com", null), 
 				ExampleMatcher.matching().

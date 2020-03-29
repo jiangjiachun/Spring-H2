@@ -39,20 +39,6 @@ public class UsersService {
 
 	public UsersEntity createOrUpdateEmployee(UsersEntity entity) throws RecordNotFoundException {
 		return repository.save(entity);
-		/*Optional<UsersEntity> employee = repository.findById(entity.getId());
-
-		if (employee.isPresent()) {
-			UsersEntity newEntity = employee.get();
-			newEntity.setEmail(entity.getEmail());
-
-			newEntity = repository.save(newEntity);
-
-			return newEntity;
-		} else {
-			entity = repository.save(entity);
-
-			return entity;
-		}*/
 	}
 
 	public void deleteEmployeeById(Long id) throws RecordNotFoundException {
@@ -66,6 +52,6 @@ public class UsersService {
 	}
 	
 	public UsersEntity findByName(String name) {
-		return null;
+		return repository.findByName(name);
 	}
 }

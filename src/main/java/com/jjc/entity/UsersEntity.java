@@ -1,14 +1,14 @@
 package com.jjc.entity;
 
+import java.sql.Timestamp;
+
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
-import javax.validation.constraints.Max;
 import javax.validation.constraints.NotNull;
-import javax.validation.constraints.Size;
 
 import org.hibernate.validator.constraints.Range;
 
@@ -30,6 +30,9 @@ public class UsersEntity {
 	@Range(max = 150, min = 1)
 	@Column
 	private Integer age;
+	
+	@Column
+	private Timestamp createDatetime;
 
 	public UsersEntity() {
 		super();
@@ -75,9 +78,12 @@ public class UsersEntity {
 		this.age = age;
 	}
 
-	@Override
-	public String toString() {
-		return "UsersEntity [id=" + id + ", name=" + name + ", email=" + email + ", age=" + age + "]";
+	public Timestamp getCreateDatetime() {
+		return createDatetime;
+	}
+
+	public void setCreateDatetime(Timestamp createDatetime) {
+		this.createDatetime = createDatetime;
 	}
 	
 }
