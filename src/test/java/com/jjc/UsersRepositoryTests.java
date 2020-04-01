@@ -13,7 +13,8 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.ExampleMatcher.StringMatcher;
 
-import com.jjc.entity.UsersEntity;
+import com.jjc.entity.User;
+import com.jjc.repository.UsersDao;
 import com.jjc.repository.UsersRepository;
 
 /**
@@ -30,15 +31,15 @@ public class UsersRepositoryTests {
 	
 	//@Test
 	public void countBySimpleExample() {
-		Example<UsersEntity> example = Example.of(new UsersEntity(null, "张三", "", null));
+		Example<User> example = Example.of(new User(null, "张三", "", null));
 		
 		assertThat(usersRepository.count(example)).isEqualTo(1L);
 	}
 	
 	//@Test
 	public void ignoreProperties() {
-		Optional<UsersEntity> users = usersRepository.findById(1L);
-		Example<UsersEntity> example = Example.of(new UsersEntity(null, null, null, 32), 
+		Optional<User> users = usersRepository.findById(1);
+		Example<User> example = Example.of(new User(null, null, null, 32), 
 				ExampleMatcher.matching().withIgnorePaths("id"));
 
 		assertThat(usersRepository.findAll(example)).contains(users.get());
@@ -46,8 +47,9 @@ public class UsersRepositoryTests {
 	
 	@Test
 	public void likeMatching() {
-		UsersEntity user = usersRepository.findByName("张三");
-		Example<UsersEntity> example = Example.of(new UsersEntity(null, "张三", "com", null), 
+		usersRepository.findName();
+		User user = usersRepository.findByName("张三");
+		Example<User> example = Example.of(new User(null, "张三", "com", null), 
 				ExampleMatcher.matching().
 //				withNullHandler(NullHandler.INCLUDE).
 				withStringMatcher(StringMatcher.CONTAINING));
@@ -57,7 +59,7 @@ public class UsersRepositoryTests {
 
 	//@Test
 	public void usingLambdas() {
-		Example<UsersEntity> example = Example.of(new UsersEntity(null, "张", "Com", null), 
+		Example<User> example = Example.of(new User(null, "张", "Com", null), 
 				ExampleMatcher.matching().
 				withIgnorePaths("id").
 				withMatcher("name", matcher -> matcher.startsWith()).

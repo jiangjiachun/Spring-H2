@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 
-import com.jjc.entity.UsersEntity;
+import com.jjc.entity.User;
 import com.jjc.exception.RecordNotFoundException;
 import com.jjc.service.UsersService;
 
@@ -23,33 +23,33 @@ public class UsersMvcController {
 
 	@RequestMapping
 	public String getAllEmployees(Model model) {
-		List<UsersEntity> list = usersService.getAllEmployees();
+		List<User> list = usersService.getAllEmployees();
 
 		model.addAttribute("employees", list);
 		return "list-employees";
 	}
 
 	@RequestMapping(path = {"/edit", "/edit/{id}"})
-	public String editEmployeeById(Model model, @PathVariable("id") Optional<Long> id) 
+	public String editEmployeeById(Model model, @PathVariable("id") Optional<Integer> id) 
 							throws RecordNotFoundException {
 		if (id.isPresent()) {
-			UsersEntity entity = usersService.getEmployeeById(id.get());
+			User entity = usersService.getEmployeeById(id.get());
 			model.addAttribute("employee", entity);
 		} else {
-			model.addAttribute("employee", new UsersEntity());
+			model.addAttribute("employee", new User());
 		}
 		return "add-edit-employee";
 	}
 	
 	@RequestMapping(path = "/delete/{id}")
-	public String deleteEmployeeById(Model model, @PathVariable("id") Long id) 
+	public String deleteEmployeeById(Model model, @PathVariable("id") Integer id) 
 							throws RecordNotFoundException {
 		usersService.deleteEmployeeById(id);
 		return "redirect:/";
 	}
 
 	@RequestMapping(path = "/createEmployee", method = RequestMethod.POST)
-	public String createOrUpdateEmployee(UsersEntity users) throws RecordNotFoundException 
+	public String createOrUpdateEmployee(User users) throws RecordNotFoundException 
 	{
 		usersService.createOrUpdateEmployee(users);
 		return "redirect:/";

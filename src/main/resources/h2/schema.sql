@@ -1,9 +1,18 @@
-DROP TABLE IF EXISTS USERS;
+drop table if exists user;
+drop table if exists unit;
 
-CREATE TABLE USERS (
-	id INT AUTO_INCREMENT  PRIMARY KEY,
-	name VARCHAR(250) NOT NULL,
-	email VARCHAR(250) DEFAULT NULL,
-	age INT NOT NULL,
-	create_datetime DATETIME NOT NULL
+create table unit(
+	id int auto_increment  primary key,
+	name varchar(250) not null,
+	create_datetime datetime not null
 );
+create table user (
+	id int auto_increment  primary key,
+       unit_id int not null,
+	name varchar(250) not null,
+	email varchar(250) default null,
+	age int not null,
+	create_datetime datetime not null
+);
+
+alter table user add foreign key (unit_id) references unit(id);
