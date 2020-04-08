@@ -1,57 +1,49 @@
 package com.jjc.entity;
 
 import java.io.Serializable;
-import java.sql.Timestamp;
-import java.util.Set;
+import java.util.ArrayList;
+import java.util.Date;
+import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.jjc.entity.base.AbstractEntity;
 
 @Entity
 @Table
-public class Unit implements Serializable {
+public class Unit extends AbstractEntity implements Serializable {
 
 	/**
 	 * 
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Integer id;
-	
 	@Column
 	private String name;
 	
 	@Column
-	private Timestamp createDatetime;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date createDatetime;
 
-	@OneToMany
-	private Set<User> users;
+	@JsonIgnore
+	@OneToMany(mappedBy = "unit", cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = User.class)
+	private List<User> users = new ArrayList<>();
 
 	public Unit() {
 		super();
 	}
 
-	public Unit(Integer id, String name, Timestamp createDatetime, Set<User> users) {
+	public Unit(String name, Date createDatetime) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.createDatetime = createDatetime;
-		this.users = users;
-	}
-
-	public Integer getId() {
-		return id;
-	}
-
-	public void setId(Integer id) {
-		this.id = id;
 	}
 
 	public String getName() {
@@ -62,19 +54,19 @@ public class Unit implements Serializable {
 		this.name = name;
 	}
 
-	public Timestamp getCreateDatetime() {
+	public Date getCreateDatetime() {
 		return createDatetime;
 	}
 
-	public void setCreateDatetime(Timestamp createDatetime) {
+	public void setCreateDatetime(Date createDatetime) {
 		this.createDatetime = createDatetime;
 	}
 
-	public Set<User> getUsers() {
+	public List<User> getUsers() {
 		return users;
 	}
 
-	public void setUsers(Set<User> users) {
+	public void setUsers(List<User> users) {
 		this.users = users;
 	}
 	

@@ -15,13 +15,13 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.jjc.entity.User;
 import com.jjc.exception.RecordNotFoundException;
-import com.jjc.service.UsersService;
+import com.jjc.service.UserService;
 
 @RestController
 @RequestMapping("/employees")
-public class UsersController {
+public class UserController {
 	@Autowired
-	UsersService service;
+	UserService service;
 
 	@GetMapping
 	public ResponseEntity<List<User>> getAllEmployees() {

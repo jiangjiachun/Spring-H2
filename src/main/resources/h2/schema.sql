@@ -8,11 +8,13 @@ create table unit(
 );
 create table user (
 	id int auto_increment  primary key,
-       unit_id int not null,
+	unit_id int,
 	name varchar(250) not null,
 	email varchar(250) default null,
 	age int not null,
 	create_datetime datetime not null
 );
 
-alter table user add foreign key (unit_id) references unit(id);
+alter table user
+add constraint fk_user_unit_id 
+foreign key (unit_id) references unit(id);

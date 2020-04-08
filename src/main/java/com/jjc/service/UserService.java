@@ -9,13 +9,13 @@ import org.springframework.stereotype.Service;
 
 import com.jjc.entity.User;
 import com.jjc.exception.RecordNotFoundException;
-import com.jjc.repository.UsersRepository;
+import com.jjc.repository.UserRepository;
 
 @Service
-public class UsersService {
+public class UserService {
 
 	@Autowired
-	UsersRepository repository;
+	UserRepository repository;
 
 	public List<User> getAllEmployees() {
 		List<User> employeeList = repository.findAll();

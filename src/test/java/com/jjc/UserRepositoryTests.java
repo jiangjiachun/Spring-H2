@@ -2,6 +2,7 @@ package com.jjc;
 
 import static org.assertj.core.api.Assertions.assertThat;
 
+import java.util.Date;
 import java.util.Optional;
 
 import javax.annotation.Resource;
@@ -13,9 +14,10 @@ import org.springframework.data.domain.Example;
 import org.springframework.data.domain.ExampleMatcher;
 import org.springframework.data.domain.ExampleMatcher.StringMatcher;
 
+import com.jjc.entity.Unit;
 import com.jjc.entity.User;
-import com.jjc.repository.UsersDao;
-import com.jjc.repository.UsersRepository;
+import com.jjc.repository.UnitRepository;
+import com.jjc.repository.UserRepository;
 
 /**
  * 
@@ -24,14 +26,17 @@ import com.jjc.repository.UsersRepository;
  */
 @Transactional
 @SpringBootTest
-public class UsersRepositoryTests {
+public class UserRepositoryTests {
 
 	@Resource
-	private UsersRepository usersRepository;
+	private UserRepository usersRepository;
+	
+	@Resource
+	private UnitRepository unitRepository;
 	
 	//@Test
 	public void countBySimpleExample() {
-		Example<User> example = Example.of(new User(null, "张三", "", null));
+		Example<User> example = Example.of(new User("张三", null, null, null, null));
 		
 		assertThat(usersRepository.count(example)).isEqualTo(1L);
 	}
@@ -39,7 +44,7 @@ public class UsersRepositoryTests {
 	//@Test
 	public void ignoreProperties() {
 		Optional<User> users = usersRepository.findById(1);
-		Example<User> example = Example.of(new User(null, null, null, 32), 
+		Example<User> example = Example.of(new User("张三", null, null, null, null), 
 				ExampleMatcher.matching().withIgnorePaths("id"));
 
 		assertThat(usersRepository.findAll(example)).contains(users.get());
@@ -47,9 +52,11 @@ public class UsersRepositoryTests {
 	
 	@Test
 	public void likeMatching() {
+		unitRepository.save(new Unit("游戏公司", new Date()));
+		unitRepository.findAll().forEach(action -> System.out.println(action.getName()));
 		usersRepository.findName();
 		User user = usersRepository.findByName("张三");
-		Example<User> example = Example.of(new User(null, "张三", "com", null), 
+		Example<User> example = Example.of(new User("张三", null, null, null, null), 
 				ExampleMatcher.matching().
 //				withNullHandler(NullHandler.INCLUDE).
 				withStringMatcher(StringMatcher.CONTAINING));
@@ -59,7 +66,7 @@ public class UsersRepositoryTests {
 
 	//@Test
 	public void usingLambdas() {
-		Example<User> example = Example.of(new User(null, "张", "Com", null), 
+		Example<User> example = Example.of(new User("张三", null, null, null, null), 
 				ExampleMatcher.matching().
 				withIgnorePaths("id").
 				withMatcher("name", matcher -> matcher.startsWith()).

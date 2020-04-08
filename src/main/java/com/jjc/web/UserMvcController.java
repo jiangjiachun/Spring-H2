@@ -12,14 +12,14 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 import com.jjc.entity.User;
 import com.jjc.exception.RecordNotFoundException;
-import com.jjc.service.UsersService;
+import com.jjc.service.UserService;
 
 
 @Controller
 @RequestMapping("/")
-public class UsersMvcController {
+public class UserMvcController {
 	@Autowired
-	private UsersService usersService;
+	private UserService usersService;
 
 	@RequestMapping
 	public String getAllEmployees(Model model) {

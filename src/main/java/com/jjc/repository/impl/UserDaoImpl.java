@@ -6,9 +6,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 
 import com.jjc.entity.User;
-import com.jjc.repository.UsersDao;
+import com.jjc.repository.UserDao;
 
-public class UsersDaoImpl implements UsersDao {
+public class UserDaoImpl implements UserDao {
 	
 	@PersistenceContext
     private EntityManager em;

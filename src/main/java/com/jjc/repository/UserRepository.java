@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.jjc.entity.User;
 
 @Repository
-public interface UsersRepository extends JpaRepository<User, Integer>, UsersDao {
+public interface UserRepository extends JpaRepository<User, Integer>, UserDao {
 	
 	public User findByName(String name);
 }

@@ -1,27 +1,23 @@
 package com.jjc.entity;
 
-import java.sql.Timestamp;
+import java.util.Date;
 
-import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
+import javax.persistence.Temporal;
+import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
 import org.hibernate.validator.constraints.Range;
 
+import com.jjc.entity.base.AbstractEntity;
+
 @Entity
 @Table
-public class User {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+public class User extends AbstractEntity {
 
 	@Column(name = "name")
 	private String name;
@@ -35,28 +31,23 @@ public class User {
 	private Integer age;
 	
 	@Column
-	private Timestamp createDatetime;
+	@Temporal(TemporalType.TIMESTAMP)
+	private Date createDatetime;
 	
-	@ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+	@ManyToOne(fetch = FetchType.LAZY)
 	private Unit unit;
 
 	public User() {
 	}
 
-	public User(Long id, String name, String email, Integer age) {
+	public User(String name, String email, @NotNull @Range(max = 150, min = 1) Integer age, Date createDatetime,
+			Unit unit) {
 		super();
-		this.id = id;
 		this.name = name;
 		this.email = email;
 		this.age = age;
-	}
-
-	public Long getId() {
-		return id;
-	}
-
-	public void setId(Long id) {
-		this.id = id;
+		this.createDatetime = createDatetime;
+		this.unit = unit;
 	}
 
 	public String getEmail() {
@@ -83,11 +74,11 @@ public class User {
 		this.age = age;
 	}
 
-	public Timestamp getCreateDatetime() {
+	public Date getCreateDatetime() {
 		return createDatetime;
 	}
 
-	public void setCreateDatetime(Timestamp createDatetime) {
+	public void setCreateDatetime(Date createDatetime) {
 		this.createDatetime = createDatetime;
 	}
 
