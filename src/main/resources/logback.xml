@@ -80,11 +80,10 @@
 	<!-- level:日志级别，TRACE, DEBUG, INFO, WARN, ERROR, ALL, OFF -->
 	<!-- name:包路径 -->
 	<!-- additivity:向上级传递打印信息，默认：true -->
-	<!-- <logger name="com.web" level="INFO"> <appender-ref ref="ASYNC" /> </logger> -->
-	<logger name="logging.level.org.hibernate.type.descriptor.sql.BasicBinder" level="trace"> 
+	<logger name="org.hibernate.type.descriptor.sql.BasicBinder" level="trace" additivity="false"> 
 		<appender-ref ref="STDOUT" />
 	</logger>
-	<logger name="logging.level.org.hibernate.stat" level="debug"> 
+	<logger name="org.hibernate.stat" level="debug" additivity="false">
 		<appender-ref ref="STDOUT" />
 	</logger>
 	<!-- level:TRACE, DEBUG, INFO, WARN, ERROR, ALL, OFF -->

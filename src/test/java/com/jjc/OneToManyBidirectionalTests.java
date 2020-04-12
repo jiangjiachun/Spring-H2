@@ -10,7 +10,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
-import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
@@ -37,7 +36,6 @@ public class OneToManyBidirectionalTests {
 	private EntityManager entityManager;
 	
 	@Test
-	@Disabled
 	public void test1() {
 		User user1 = new User();
 		user1.setAge(21);
