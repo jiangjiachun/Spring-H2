@@ -34,7 +34,7 @@ public class OneToManyBidirectionalTests {
 	private UnitRepository unitRepository;
 	
 	@PersistenceContext
-	private EntityManager em;
+	private EntityManager entityManager;
 	
 	@Test
 	@Disabled
@@ -52,13 +52,13 @@ public class OneToManyBidirectionalTests {
 		user2.setName("test52");
 		
 		Unit unit = new Unit("游戏公司", new Date());
-		unit.getUsers().add(user1);
-		unit.getUsers().add(user2);
+		unit.addUser(user1);
+		unit.addUser(user2);
 		
 		unitRepository.save(unit);
 		
 		// orphanRemoval = true执行delete，默认：false
-		unit.getUsers().remove(user1);
+		unit.removeUser(user2);
 		unitRepository.flush();
 	}
 	
@@ -77,13 +77,13 @@ public class OneToManyBidirectionalTests {
 		user2.setName("test52");
 		
 		Unit unit = new Unit("游戏公司", new Date());
-		unit.getUsers().add(user1);
-		unit.getUsers().add(user2);
+		unit.addUser(user1);
+		unit.addUser(user2);
 		
-		em.persist(unit);
+		entityManager.persist(unit);
 		
 		// orphanRemoval = true执行delete，默认：false
-		unit.getUsers().remove(user1);
-		em.flush();
+		unit.removeUser(user1);
+		entityManager.flush();
 	}
 }

@@ -1,6 +1,7 @@
 package com.jjc.entity;
 
 import java.util.Date;
+import java.util.Objects;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -88,6 +89,22 @@ public class User extends AbstractEntity {
 
 	public void setUnit(Unit unit) {
 		this.unit = unit;
-	}
+	}	
 	
+	@Override
+	public boolean equals(Object o) {
+		if ( this == o ) {
+			return true;
+		}
+		if ( o == null || getClass() != o.getClass() ) {
+			return false;
+		}
+		User user = (User) o;
+		return Objects.equals(getId(), user.getId());
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(getId());
+	}
 }

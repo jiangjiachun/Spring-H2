@@ -41,12 +41,15 @@ public class OneToManyUnidirectionalTests {
 	
 	@Test
 	public void test2() {
-		Comment comment = new Comment("comment1");
+		Comment comment1 = new Comment("comment1");
+		Comment comment2 = new Comment("comment2");
 		
 		Post post = new Post("post1");
-		post.getComments().add(comment);
+		post.getComments().add(comment1);
+		post.getComments().add(comment2);
 		
 		entityManager.persist(post);
+		entityManager.flush();
 		
 	}
 }

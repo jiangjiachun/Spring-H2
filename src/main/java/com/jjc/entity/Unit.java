@@ -13,7 +13,6 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jjc.entity.base.AbstractEntity;
 
 @Entity
@@ -32,8 +31,7 @@ public class Unit extends AbstractEntity implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createDatetime;
 
-	@JsonIgnore
-	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = User.class)
+	@OneToMany(mappedBy = "unit", cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = User.class)
 	private List<User> users = new ArrayList<>();
 
 	public Unit() {
@@ -70,4 +68,13 @@ public class Unit extends AbstractEntity implements Serializable {
 		this.users = users;
 	}
 	
+	public void addUser(User user) {
+		users.add(user);
+		user.setUnit(this);
+	}
+
+	public void removeUser(User user) {
+		users.remove(user);
+		user.setUnit(null);
+	}
 }
