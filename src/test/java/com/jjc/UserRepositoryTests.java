@@ -3,6 +3,7 @@ package com.jjc;
 import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.Date;
+import java.util.List;
 import java.util.Optional;
 
 import javax.annotation.Resource;
@@ -29,7 +30,7 @@ import com.jjc.repository.UserRepository;
 public class UserRepositoryTests {
 
 	@Resource
-	private UserRepository usersRepository;
+	private UserRepository userRepository;
 	
 	@Resource
 	private UnitRepository unitRepository;
@@ -38,30 +39,30 @@ public class UserRepositoryTests {
 	public void countBySimpleExample() {
 		Example<User> example = Example.of(new User("张三", null, null, null, null));
 		
-		assertThat(usersRepository.count(example)).isEqualTo(1L);
+		assertThat(userRepository.count(example)).isEqualTo(1L);
 	}
 	
 	//@Test
 	public void ignoreProperties() {
-		Optional<User> users = usersRepository.findById(1);
+		Optional<User> users = userRepository.findById(1);
 		Example<User> example = Example.of(new User("张三", null, null, null, null), 
 				ExampleMatcher.matching().withIgnorePaths("id"));
 
-		assertThat(usersRepository.findAll(example)).contains(users.get());
+		assertThat(userRepository.findAll(example)).contains(users.get());
 	}
 	
-	@Test
+//	@Test
 	public void likeMatching() {
 		unitRepository.save(new Unit("游戏公司", new Date()));
 		unitRepository.findAll().forEach(action -> System.out.println(action.getName()));
-		usersRepository.findName();
-		User user = usersRepository.findByName("张三");
+		userRepository.findName();
+		User user = userRepository.findByName("张三");
 		Example<User> example = Example.of(new User("张三", null, null, null, null), 
 				ExampleMatcher.matching().
 //				withNullHandler(NullHandler.INCLUDE).
 				withStringMatcher(StringMatcher.CONTAINING));
 
-		assertThat(usersRepository.findAll(example)).contains(user);
+		assertThat(userRepository.findAll(example)).contains(user);
 	}
 
 	//@Test
@@ -73,6 +74,11 @@ public class UserRepositoryTests {
 				withMatcher("age", matcher -> matcher.transform(age -> Optional.of("23"))).
 				withMatcher("email", matcher -> matcher.ignoreCase().contains()));
 
-		assertThat(usersRepository.findAll(example));
+		assertThat(userRepository.findAll(example));
+	}
+	
+	@Test
+	public void list() {
+		userRepository.list(1);
 	}
 }

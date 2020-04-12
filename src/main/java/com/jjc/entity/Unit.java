@@ -33,7 +33,7 @@ public class Unit extends AbstractEntity implements Serializable {
 	private Date createDatetime;
 
 	@JsonIgnore
-	@OneToMany(mappedBy = "unit", cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = User.class)
+	@OneToMany(cascade = CascadeType.ALL, orphanRemoval = true, targetEntity = User.class)
 	private List<User> users = new ArrayList<>();
 
 	public Unit() {

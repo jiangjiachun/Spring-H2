@@ -21,11 +21,11 @@ import com.jjc.repository.UserRepository;
 
 /**
  * @author jjc
- *
+ * 双向关联
  */
 @Transactional
 @SpringBootTest
-public class OneToManyTests {
+public class OneToManyBidirectionalTests {
 
 	@Resource
 	private UserRepository userRepository;
@@ -37,6 +37,7 @@ public class OneToManyTests {
 	private EntityManager em;
 	
 	@Test
+	@Disabled
 	public void test1() {
 		User user1 = new User();
 		user1.setAge(21);
@@ -62,7 +63,6 @@ public class OneToManyTests {
 	}
 	
 	@Test
-	@Disabled
 	public void test2() {
 		User user1 = new User();
 		user1.setAge(21);
