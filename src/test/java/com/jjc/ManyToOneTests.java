@@ -40,7 +40,5 @@ public class ManyToOneTests {
 		user.setUnit(null);
 		
 		entityManager.flush();
-
-
 	}
 }
