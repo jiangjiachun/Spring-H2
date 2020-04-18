@@ -37,7 +37,7 @@ public class UserRepositoryTests {
 	
 	//@Test
 	public void countBySimpleExample() {
-		Example<User> example = Example.of(new User("张三", null, null, null, null));
+		Example<User> example = Example.of(new User("张三", null, null, null));
 		
 		assertThat(userRepository.count(example)).isEqualTo(1L);
 	}
@@ -45,7 +45,7 @@ public class UserRepositoryTests {
 	//@Test
 	public void ignoreProperties() {
 		Optional<User> users = userRepository.findById(1);
-		Example<User> example = Example.of(new User("张三", null, null, null, null), 
+		Example<User> example = Example.of(new User("张三", null, null, null), 
 				ExampleMatcher.matching().withIgnorePaths("id"));
 
 		assertThat(userRepository.findAll(example)).contains(users.get());
@@ -57,7 +57,7 @@ public class UserRepositoryTests {
 		unitRepository.findAll().forEach(action -> System.out.println(action.getName()));
 		userRepository.findName();
 		User user = userRepository.findByName("张三");
-		Example<User> example = Example.of(new User("张三", null, null, null, null), 
+		Example<User> example = Example.of(new User("张三", null, null, null), 
 				ExampleMatcher.matching().
 //				withNullHandler(NullHandler.INCLUDE).
 				withStringMatcher(StringMatcher.CONTAINING));
@@ -67,7 +67,7 @@ public class UserRepositoryTests {
 
 	//@Test
 	public void usingLambdas() {
-		Example<User> example = Example.of(new User("张三", null, null, null, null), 
+		Example<User> example = Example.of(new User("张三", null, null, null), 
 				ExampleMatcher.matching().
 				withIgnorePaths("id").
 				withMatcher("name", matcher -> matcher.startsWith()).

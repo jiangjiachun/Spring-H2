@@ -13,6 +13,8 @@ import javax.persistence.Table;
 import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
+import org.hibernate.annotations.CreationTimestamp;
+
 import com.jjc.entity.base.AbstractEntity;
 
 @Entity
@@ -27,6 +29,7 @@ public class Unit extends AbstractEntity implements Serializable {
 	@Column
 	private String name;
 	
+	@CreationTimestamp
 	@Column
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createDatetime;

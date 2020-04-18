@@ -1,5 +1,6 @@
 package com.jjc.entity;
 
+import java.io.Serializable;
 import java.util.Date;
 import java.util.Objects;
 
@@ -12,13 +13,19 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 import javax.validation.constraints.NotNull;
 
+import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.validator.constraints.Range;
 
 import com.jjc.entity.base.AbstractEntity;
 
 @Entity
 @Table
-public class User extends AbstractEntity {
+public class User extends AbstractEntity implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Column(name = "name")
 	private String name;
@@ -31,6 +38,7 @@ public class User extends AbstractEntity {
 	@Column
 	private Integer age;
 	
+	@CreationTimestamp
 	@Column
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createDatetime;
@@ -41,13 +49,12 @@ public class User extends AbstractEntity {
 	public User() {
 	}
 
-	public User(String name, String email, @NotNull @Range(max = 150, min = 1) Integer age, Date createDatetime,
+	public User(String name, String email, @NotNull @Range(max = 150, min = 1) Integer age,
 			Unit unit) {
 		super();
 		this.name = name;
 		this.email = email;
 		this.age = age;
-		this.createDatetime = createDatetime;
 		this.unit = unit;
 	}
 
