@@ -16,6 +16,7 @@ import javax.validation.constraints.NotNull;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.validator.constraints.Range;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.jjc.entity.base.AbstractEntity;
 
 @Entity
@@ -43,6 +44,7 @@ public class User extends AbstractEntity implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createDatetime;
 	
+	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY)
 	private Unit unit;
 

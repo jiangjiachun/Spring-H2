@@ -5,6 +5,12 @@ drop table if exists post;
 drop table if exists school_teacher;
 drop table if exists teacher;
 drop table if exists school;
+drop table if exists phone;
+drop table if exists phone_details;
+drop table if exists book_details;
+drop table if exists book;
+drop table if exists content_details;
+drop table if exists content;
 
 create table unit(
 	id int auto_increment primary key,
@@ -62,3 +68,52 @@ foreign key (school_id) references school(id);
 alter table school_teacher
 add constraint fk_teacher_id
 foreign key (teacher_id) references teacher(id);
+
+create table phone (
+    id int auto_increment primary key,
+    number varchar(255),
+    details_id int
+);
+
+create table phone_details (
+    id int auto_increment primary key,
+    provider varchar(255),
+    technology varchar(255)
+);
+
+alter table phone
+add constraint fk_phone_details_id
+foreign key (details_id) references phone_details(id);
+
+
+create table book (
+    id int auto_increment primary key,
+    name varchar(255)
+);
+
+create table book_details (
+    id int auto_increment primary key,
+    author varchar(255),
+    press varchar(255),
+    book_id int
+);
+
+ALTER TABLE book_details
+ADD CONSTRAINT fk_book_details_id
+FOREIGN KEY (book_id) REFERENCES book(id);
+
+create table content (
+    id int auto_increment primary key,
+    title varchar(255)
+);
+
+create table content_details (
+    id int auto_increment primary key,
+    text text,
+    content_id int
+);
+
+ALTER TABLE content_details
+ADD CONSTRAINT fk_content_details_id
+FOREIGN KEY (content_id) REFERENCES content(id);
+
