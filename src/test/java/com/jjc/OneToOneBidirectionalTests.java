@@ -32,10 +32,9 @@ public class OneToOneBidirectionalTests {
 		BookDetails bookDetails = new BookDetails("author", "press");
 		book.addDetails(bookDetails);
 		entityManager.persist(book);
-		
 		entityManager.clear();
 		
-		Book bd = entityManager.find(Book.class, 1);
+		entityManager.find(Book.class, 1);
 	}
 	
 	@Test
@@ -44,13 +43,11 @@ public class OneToOneBidirectionalTests {
 		Content content = new Content();
 		content.setTitle("title");
 		ContentDetails details = new ContentDetails("text");
-		content.setDetails(details);
-//		content.addDetails(details);
+		content.addDetails(details);
 		entityManager.persist(content);
 		entityManager.clear();
 		
-		Content content2 = entityManager.find(Content.class, 1);
-//		System.out.println(content2.getDetails().getText());
+		entityManager.find(Content.class, 1);
 
 	}
 }
