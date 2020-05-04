@@ -9,10 +9,10 @@
 		<relativePath/> <!-- lookup parent from repository -->
 	</parent>
 	<groupId>com.jjc</groupId>
-	<artifactId>Spring-H2</artifactId>
+	<artifactId>SpringBoot-Jpa</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
-	<name>Spring-H2</name>
-	<description>spring boot h2</description>
+	<name>SpringBoot-Jpa</name>
+	<description>SpringBoot-Jpa</description>
 
 	<properties>
 		<java.version>1.8</java.version>
