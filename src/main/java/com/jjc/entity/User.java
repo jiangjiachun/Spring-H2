@@ -1,12 +1,17 @@
 package com.jjc.entity;
 
 import java.io.Serializable;
+import java.util.ArrayList;
 import java.util.Date;
+import java.util.List;
 import java.util.Objects;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.FetchType;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 import javax.persistence.Temporal;
@@ -44,9 +49,13 @@ public class User extends AbstractEntity implements Serializable {
 	@Temporal(TemporalType.TIMESTAMP)
 	private Date createDatetime;
 	
-	@JsonIgnore
 	@ManyToOne(fetch = FetchType.LAZY)
+	@JoinColumn(name = "unit_id")
 	private Unit unit;
+	
+	@JsonIgnore
+	@ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE})
+	private List<Address> addresses = new ArrayList<>();
 
 	public User() {
 	}
@@ -99,6 +108,14 @@ public class User extends AbstractEntity implements Serializable {
 	public void setUnit(Unit unit) {
 		this.unit = unit;
 	}	
+
+	public List<Address> getAddresses() {
+		return addresses;
+	}
+
+	public void setAddresses(List<Address> addresses) {
+		this.addresses = addresses;
+	}
 	
 	@Override
 	public boolean equals(Object o) {
