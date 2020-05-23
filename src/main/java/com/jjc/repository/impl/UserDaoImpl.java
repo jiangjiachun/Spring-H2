@@ -15,7 +15,7 @@ public class UserDaoImpl implements UserDao {
 	
 	@Override
 	public User findName() {
-		List<User> result = em.createQuery( "from User", User.class ).getResultList();
+		List<User> result = em.createQuery("from User", User.class ).getResultList();
 		result.forEach(action -> System.out.println( "User (" + action.getName() + ") : " + action.getEmail()));
 		return null;
 	}

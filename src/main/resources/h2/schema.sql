@@ -1,3 +1,5 @@
+drop table if exists user_addresses;
+drop table if exists address;
 drop table if exists user;
 drop table if exists unit;
 drop table if exists comment;
@@ -70,15 +72,15 @@ add constraint fk_teacher_id
 foreign key (teacher_id) references teacher(id);
 
 create table phone (
-    id int auto_increment primary key,
-    number varchar(255),
-    details_id int
+	id int auto_increment primary key,
+	number varchar(255),
+	details_id int
 );
 
 create table phone_details (
-    id int auto_increment primary key,
-    provider varchar(255),
-    technology varchar(255)
+	id int auto_increment primary key,
+	provider varchar(255),
+	technology varchar(255)
 );
 
 alter table phone
@@ -87,33 +89,53 @@ foreign key (details_id) references phone_details(id);
 
 
 create table book (
-    id int auto_increment primary key,
-    name varchar(255)
+	id int auto_increment primary key,
+	name varchar(255)
 );
 
 create table book_details (
-    id int auto_increment primary key,
-    author varchar(255),
-    press varchar(255),
-    book_id int
+	id int auto_increment primary key,
+	author varchar(255),
+	press varchar(255),
+	book_id int
 );
 
-ALTER TABLE book_details
-ADD CONSTRAINT fk_book_details_id
-FOREIGN KEY (book_id) REFERENCES book(id);
+alter table book_details
+add constraint fk_book_details_id
+foreign key (book_id) references book(id);
 
 create table content (
-    id int auto_increment primary key,
-    title varchar(255)
+	id int auto_increment primary key,
+	title varchar(255)
 );
 
 create table content_details (
-    id int auto_increment primary key,
-    text text,
-    content_id int
+	id int auto_increment primary key,
+	text text,
+	content_id int
 );
 
-ALTER TABLE content_details
-ADD CONSTRAINT fk_content_details_id
-FOREIGN KEY (content_id) REFERENCES content(id);
+alter table content_details
+add constraint fk_content_details_id
+foreign key (content_id) references content(id);
+
+create table address (
+	id int auto_increment primary key,
+	number varchar(255),
+	street varchar(255)
+);
+
+create table user_addresses (
+	user_id int not null,
+	addresses_id int not null
+);
+
+
+alter table user_addresses
+add constraint fk_addresses_id
+foreign key (addresses_id) references address(id);
+
+alter table user_addresses
+add constraint fk_user_id
+foreign key (user_id) references user(id);
 

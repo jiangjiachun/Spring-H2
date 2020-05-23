@@ -56,3 +56,7 @@ values
 	(2,'test_48','test_48@163.com',42,now()),
 	(1,'test_49','test_49@163.com',42,now()),
 	(2,'test_50','test_50@163.com',58,now());
+	
+insert into address (number, street) values ('number1', 'street1');
+
+insert into user_addresses (user_id, addresses_id) values (1, 1);
