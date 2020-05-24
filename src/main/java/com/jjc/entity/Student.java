@@ -11,7 +11,7 @@ import java.util.Objects;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 import com.jjc.entity.base.AbstractEntity;
@@ -22,7 +22,7 @@ import com.jjc.entity.base.AbstractEntity;
  */
 @Table
 @Entity
-public class Teacher extends AbstractEntity implements Serializable {
+public class Student extends AbstractEntity implements Serializable {
 
 	/**
 	 * 
@@ -32,14 +32,14 @@ public class Teacher extends AbstractEntity implements Serializable {
 	@Column
 	private String name;
 	
-	@ManyToMany(cascade = {CascadeType.MERGE, CascadeType.PERSIST})
-	private List<Course> courses = new ArrayList<>();
-	
-	public Teacher() {
+	@OneToMany(mappedBy = "student", cascade = CascadeType.ALL, orphanRemoval = true)
+	private List<StudentCourse> studentCourses = new ArrayList<>();
+
+	public Student() {
 		super();
 	}
 
-	public Teacher(String name) {
+	public Student(String name) {
 		super();
 		this.name = name;
 	}
@@ -52,22 +52,26 @@ public class Teacher extends AbstractEntity implements Serializable {
 		this.name = name;
 	}
 
-	public List<Course> getCourses() {
-		return courses;
+	public List<StudentCourse> getStudentCourses() {
+		return studentCourses;
 	}
 
-	public void setCourses(List<Course> courses) {
-		this.courses = courses;
+	public void setStudentCourses(List<StudentCourse> studentCourses) {
+		this.studentCourses = studentCourses;
 	}
 	
 	public void addCourse(Course course) {
-		courses.add(course);
-		course.getTeachers().add(this);
+		StudentCourse studentCourse = new StudentCourse(this, course);
+		studentCourses.add(studentCourse);
+		course.getStudentCourses().add(studentCourse);
 	}
 
 	public void removeCourse(Course course) {
-		courses.remove(course);
-		course.getTeachers().remove(this);
+		StudentCourse studentCourse = new StudentCourse(this, course);
+		course.getStudentCourses().remove(studentCourse);
+		studentCourses.remove(studentCourse);
+		studentCourse.setCourse(null);
+		studentCourse.setStudent(null);
 	}
 
 	@Override
@@ -78,8 +82,8 @@ public class Teacher extends AbstractEntity implements Serializable {
 		if ( o == null || getClass() != o.getClass() ) {
 			return false;
 		}
-		Teacher teacher = (Teacher) o;
-		return Objects.equals(getId(), teacher.getId());
+		Student student = (Student) o;
+		return Objects.equals(getId(), student.getId());
 	}
 
 	@Override

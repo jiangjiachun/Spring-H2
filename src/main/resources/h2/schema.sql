@@ -1,5 +1,9 @@
 drop table if exists user_addresses;
+drop table if exists teacher_courses;
+drop table if exists student_course;
+drop table if exists student;
 drop table if exists address;
+drop table if exists course;
 drop table if exists user;
 drop table if exists unit;
 drop table if exists comment;
@@ -139,3 +143,48 @@ alter table user_addresses
 add constraint fk_user_id
 foreign key (user_id) references user(id);
 
+create table course (
+	id int auto_increment primary key,
+	name varchar(255)
+);
+
+create table teacher_courses (
+	teachers_id int not null,
+	courses_id int not null
+);
+
+alter table teacher_courses
+add constraint fk_tc_teacher_id
+foreign key (teachers_id) references teacher(id);
+
+alter table teacher_courses
+add constraint fk_tc_course_id
+foreign key (courses_id) references course(id);
+
+
+alter table teacher_courses
+add constraint uk_teacher_course
+unique (teachers_id, courses_id);
+
+create table student (
+	id int auto_increment primary key,
+	name varchar(255)
+);
+
+create table student_course (
+	student_id int not null,
+	course_id int not null
+);
+
+alter table student_course
+add constraint fk_sc_student_id
+foreign key (student_id) references student(id);
+
+alter table student_course
+add constraint fk_sc_course_id
+foreign key (course_id) references course(id);
+
+
+alter table student_course
+add constraint uk_student_course
+unique (student_id, course_id);
